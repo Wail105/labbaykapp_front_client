@@ -1,0 +1,103 @@
+.loading {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+/* From Uiverse.io by successfulfadwa */
+.cube-loader {
+    position: relative;
+    /* u can choose any size */
+    width: 75px;
+    height: 75px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotateX(-30deg) rotateY(0);
+    }
+
+    100% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube-loader .cube-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* top: 0;
+left: 0; */
+    transform-style: preserve-3d;
+}
+
+.cube-loader .cube-wrapper .cube-span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* top: 0;
+left: 0; */
+    /* width 75px / 2 = 37.5px */
+    transform: rotateY(calc(90deg * var(--i))) translateZ(37.5px);
+    background: black;
+    background: black;
+    background: black;
+    background: black;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#ffe3e3", endColorstr="#ffd5b2", GradientType=1);
+}
+
+.cube-top {
+position: absolute;
+width: 75px;
+height: 75px;
+background: black;
+transform: rotateX(90deg) translateZ(37.5px);
+transform-style: preserve-3d;
+}
+
+.cube-top::before {
+content: '';
+position: absolute;
+width: 75px;
+height: 75px;
+background: black;
+transform: translateZ(-90px);
+filter: blur(10px);
+box-shadow: 0 0 10px #323232,
+        0 0 20px #323232,
+        0 0 30px #323232,
+        0 0 40px #323232;
+}
+
+.cube-span img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Adjust position on mobile devices */
+@media (max-width: 768px) {
+    .loading {
+        left: 40%;
+    }
+}
+
+.blur {
+    filter: blur(5px);
+  }
+  
+  .blur-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+  }

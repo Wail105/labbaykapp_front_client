@@ -1,0 +1,197 @@
+:root{
+    --my-body-color: #E4E9F7;
+    --my-nav-color: #1b1a17;
+    --my-side-nav: #010718;
+    --my-text-color: #FFF;
+    --my-search-bar: #F2F2F2;
+    --my-search-text: #010718;
+    --my-gold-color: #f2b705;
+}
+
+nav{
+    font-family: "El Messiri", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    position: fixed;
+    display: flex;
+    
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--my-nav-color);
+    z-index: 100;
+}
+
+
+
+
+nav .my-nav-bar{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    background-color: var(--my-nav-color);
+    display: flex;
+    align-items: center !important; 
+    justify-content: space-between;
+    
+}
+
+nav .my-nav-bar .my-sidebarOpen{
+    color: var(--my-text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .my-nav-bar .my-logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--my-text-color);
+    text-decoration: none;
+}
+
+.my-menu .my-logo-toggle{
+    display: none;
+}
+
+.my-nav-bar .my-nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.my-nav-bar .my-nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.my-nav-links li a{
+    padding-top: 5px;
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--my-text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+
+
+.my-nav-links li:hover a{
+    color: var(--my-gold-color);
+}
+
+.my-nav-bar .my-darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.my-dark-light i,
+.my-searchToggle i{
+    position: absolute;
+    color: var(--my-text-color);
+    font-size: 22px;
+    cursor: pointer;
+    
+}
+
+.my-searchToggle.active ~ .my-search-field{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.my-lang{
+    cursor: pointer;
+}
+
+@media (max-width: 790px) {
+    nav .my-nav-bar .my-sidebarOpen{
+        display: block;
+    }
+
+    .my-menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--my-nav-color);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .my-menu{
+        left: -0%;
+    }
+
+    nav.active .my-nav-bar .my-navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .my-menu .my-logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .my-logo-toggle .my-siderbarClose{
+        color: var(--my-text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .my-nav-bar .my-nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .my-nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+/* Show the dropdown on hover */
+
+/* Ensure the dropdown is hidden initially */
+.dropdown-menu {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background-color: var(--my-nav-color) !important; /* Styled as needed */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 100;
+}
+
+/* When isDropdownOpen is true, the .show class is added, making it visible */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Optional: adjust the padding and layout for dropdown items */
+.dropdown-menu a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--my-text-color);
+}
+.dropdown-item::hover{
+    color: var(--my-gold-color);
+}
+/* Adjust the layout for the dropdown to stay within the nav bar */
+.my-nav-links {
+    position: relative;
+}
+.dropdown-item{
+    color: var(--my-text-color)  !important;
+
+}

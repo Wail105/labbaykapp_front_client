@@ -23,14 +23,11 @@ const ClientPages = () => {
         <>
         {!showSidebar && <NavBar/> }
         <Routes>
-                <Route path="/client" element={<DashboardCl/>}/>
+               
                 <Route path="/" element={<Home />} />
-                <Route path="/thanks" element={<ThanksPage />} />
+             
                 
-                <Route element={<PublicRoute />}>
-                    <Route path="/login" element={<Signin />} />
-                    <Route path="/register" element={<Signup />} />
-                </Route>
+               
 
            
         </Routes>

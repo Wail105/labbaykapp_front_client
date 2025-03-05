@@ -12,7 +12,6 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Sitemark from './SitemarkIcon';
-import ToggleColorMode from './ToggleColorMode';
 import PropTypes from 'prop-types';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -33,7 +32,6 @@ export default function AppAppBar({
   showCustomTheme,
   toggleCustomTheme,
   mode,
-  toggleColorMode,
   children,
 }) {
   const [open, setOpen] = React.useState(false);
@@ -53,6 +51,7 @@ export default function AppAppBar({
         left: 0,
         right: 0,
         top: 20,
+        marginTop: 0,
       }}
     >
       <Container maxWidth="lg">
@@ -82,57 +81,13 @@ export default function AppAppBar({
               padding: '0px 50px 0px 0px',
             }}
           >
-            <Button color="primary" variant="text" size="small" sx={{ boxShadow: 'none' }}>
-              <div style={{ fontWeight: 'bold' }}>Sign in</div>
-            </Button>
+        
             <Button color="primary" variant="contained" size="small" sx={{ boxShadow: 'none' }}>
-              <div style={{ fontWeight: 'bold' }}>Sign up</div>
+              <div style={{ fontWeight: 'bold' }}>Reserver</div>
             </Button>
           </Box>
-          <Box sx={{ marginLeft: 'auto' }}>
-            <ToggleColorMode
-              data-screenshot="toggle-mode"
-              mode={mode}
-              toggleColorMode={toggleColorMode}
-            />
-          </Box>
-          <Box sx={{ display: { sm: 'flex', md: 'none' } }}>
-            <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
-              <MenuIcon />
-            </IconButton>
-            <Drawer anchor="top" open={open} onClose={toggleDrawer(false)}>
-              <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                  }}
-                >
-                  <IconButton onClick={toggleDrawer(false)}>
-                    <CloseRoundedIcon />
-                  </IconButton>
-                </Box>
-                <Divider sx={{ my: 3 }} />
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
-                <MenuItem>Blog</MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="contained" fullWidth>
-                    Sign up
-                  </Button>
-                </MenuItem>
-                <MenuItem>
-                  <Button color="primary" variant="outlined" fullWidth>
-                    Sign in
-                  </Button>
-                </MenuItem>
-              </Box>
-            </Drawer>
-          </Box>
+         
+          
         </StyledToolbar>
       </Container>
     </AppBar>
@@ -144,6 +99,6 @@ AppAppBar.propTypes = {
   children: PropTypes.node,
   mode: PropTypes.oneOf(['dark', 'light']).isRequired,
   showCustomTheme: PropTypes.bool.isRequired,
-  toggleColorMode: PropTypes.func.isRequired,
+
   toggleCustomTheme: PropTypes.func.isRequired,
 };

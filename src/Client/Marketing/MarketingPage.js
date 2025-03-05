@@ -50,14 +50,14 @@ export default function MarketingPage() {
       toggleCustomTheme={toggleCustomTheme}
       showCustomTheme={showCustomTheme}
       mode={mode}
-      toggleColorMode={toggleColorMode}
+      
     >
       <ThemeProvider theme={showCustomTheme ? MPTheme : defaultTheme}>
         <CssBaseline enableColorScheme />
         <AppAppBar />
         <Hero />
         <div>
-          <LogoCollection />
+          {/* <LogoCollection /> */}
           <Features />
           <Divider />
           <Testimonials />

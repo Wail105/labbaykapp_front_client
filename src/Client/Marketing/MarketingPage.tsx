@@ -12,7 +12,7 @@ import Testimonials from './components_2/Testimonials';
 import FAQ from './components_2/FAQ';
 import Footer from './components_2/Footer';
 import getMPTheme from '../../theme/getMPTheme';
-import TemplateFrame from '../TemplateFrame';
+
 
 export default function MarketingPage() {
   const [mode, setMode] = React.useState<PaletteMode>('light');
@@ -50,7 +50,7 @@ export default function MarketingPage() {
       toggleCustomTheme={toggleCustomTheme}
       showCustomTheme={showCustomTheme}
       mode={mode}
-      toggleColorMode={toggleColorMode}
+    
     >
       <ThemeProvider theme={showCustomTheme ? MPTheme : defaultTheme}>
         <CssBaseline enableColorScheme />

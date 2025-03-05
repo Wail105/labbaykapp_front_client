@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
-import ToggleColorMode from './components_2/ToggleColorMode';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import getMPTheme from '../../theme/getMPTheme';
@@ -24,7 +24,6 @@ function TemplateFrame({
   showCustomTheme,
   toggleCustomTheme,
   mode,
-  toggleColorMode,
   children,
 }) {
   const MPTheme = createTheme(getMPTheme(mode));
@@ -33,13 +32,7 @@ function TemplateFrame({
     <ThemeProvider theme={MPTheme}>
       
         <StyledAppBar sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-        <Box sx={{ marginLeft: 'auto' }}>
-            <ToggleColorMode
-              data-screenshot="toggle-mode"
-              mode={mode}
-              toggleColorMode={toggleColorMode}
-            />
-          </Box>
+       
         </StyledAppBar>
         <Box
           sx={{

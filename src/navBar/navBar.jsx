@@ -131,63 +131,12 @@ const NavBar = () => {
                         <li><Link to="/portfolio">{t('portfolio')}</Link></li>
                         <li><Link to="/services">{t('services')}</Link></li>
 
-                        <li ref={languageDropdownRef}>
-                            <a
-                                className="btn btn-link dropdown-toggle"
-                                href="#"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
-                                }}
-                                aria-expanded={isLanguageDropdownOpen}
-                            >
-                                {t('language')}
-                            </a>
-                            <ul className={`dropdown-menu ${isLanguageDropdownOpen ? "show" : ""}`}>
-                                <li><a className="dropdown-item d-flex align-items-center" href="#" onClick={() => changeLanguage('en')}>
-                                    <img width={"15px"} src="images/flags/us.png" alt="us" />
-                                    <span className="mt-1 ms-2">English</span>
-                                    </a></li>
-                                <li><a className="dropdown-item" href="#" onClick={() => changeLanguage('fr')}>
-                                   <img width={"15px"} src="images/flags/fr.png" alt="fr" />  
-                                    <span className="mt-1 ms-2">Français</span>    
-                                </a></li>
-                                <li><a className="dropdown-item" href="#" onClick={() => changeLanguage('ar')}>
-                                    <img width={"15px"} src="images/flags/ma.png" alt="ar" />   
-                                    <span className="mt-1 ms-2">العربية</span>    
-                                </a></li>
-                            </ul>
-                        </li>
+                       
                     </ul>
                 </div>
 
                 {/* User Toggle Menu */}
-                <div ref={userMenuRef} className="user-toggle mt-1">
-                    <a
-                        style={{'fontSize':'20px'}}
-                        href="#"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            setIsUserMenuOpen(!isUserMenuOpen);
-                        }}
-                        aria-expanded={isUserMenuOpen}
-                    >
-                        <i className="bi bi-person-circle"></i>
-                    </a>
-                    <ul style={{'right':"10px"}} className={`dropdown-menu ${isUserMenuOpen ? "show" : ""}`}>
-                        {isAuthenticated ? (
-                            <>
-                                <li><Link Link className="dropdown-item" to="/test">{t('hello')}, {username}</Link></li>
-                                <li><a className="dropdown-item" href="#" onClick={handleLogout}>{t('logout')}</a></li>
-                            </>
-                        ) : (
-                            <>
-                                <li><Link className="dropdown-item" to="/login">{t('signin.loginButton')} <i className="bi bi-box-arrow-in-right"></i></Link></li>
-                                <li><Link className="dropdown-item" to="/register">{t('signin.createAccount')}</Link></li>
-                            </>
-                        )}
-                    </ul>
-                </div>
+                
             </div>
         </nav>
     );
